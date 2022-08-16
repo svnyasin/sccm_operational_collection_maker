@@ -1,6 +1,6 @@
-#Change SiteCode before run!!!!!!!!!!!!*******
-
-Set-location SEV:
+#Get SiteCode
+$SiteCode = Get-PSDrive -PSProvider CMSITE
+Set-location $SiteCode":"
 
 #Create Default Folder 
 $CollectionFolder = @{Name ="Operational"; ObjectType =5000; ParentContainerNodeId =0}
@@ -1233,7 +1233,7 @@ Select-Object @{L="Name"
 Import-Module 'C:\Program Files (x86)\Microsoft Configuration Manager\AdminConsole\bin\ConfigurationManager.psd1'
 Import-module ($Env:SMS_ADMIN_UI_PATH.Substring(0,$Env:SMS_ADMIN_UI_PATH.Length-5)+ '\ConfigurationManager.psd1')
 
-
+Set-Location SEV:
 
 ForEach ($Collection In $($Collections | Sort-Object LimitingCollection))
 {
