@@ -1,6 +1,6 @@
-#Get SiteCode
-$SiteCode = Get-PSDrive -PSProvider CMSITE
-Set-location $SiteCode":"
+#Change SiteCode before run!!!!!!!!!!!!*******
+
+Set-location SEV:
 
 #Create Default Folder 
 $CollectionFolder = @{Name ="Operational"; ObjectType =5000; ParentContainerNodeId =0}
